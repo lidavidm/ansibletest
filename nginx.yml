@@ -1,0 +1,7 @@
+---
+- name: Set up Nginx
+  hosts: all
+
+  tasks:
+  - name: Install Nginx
+    apt: nginx
