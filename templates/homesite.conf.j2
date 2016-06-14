@@ -1,0 +1,10 @@
+server {
+       listen {{ port }};
+       listen [::]:{{ port }};
+
+       root {{ root }};
+
+       location / {
+                try_files $uri $uri/ =404;
+       }
+}
