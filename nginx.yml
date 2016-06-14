@@ -2,15 +2,16 @@
 - name: Set up Nginx
   hosts: all
 
+  vars:
+    port: 8001
+    root: /home/vagrant
+
   tasks:
   - name: Install Nginx
     apt: name=nginx state=present
 
   - name: Configure Nginx
     template: src=homesite.conf.j2 dest=/etc/nginx/sites-enabled/test.conf
-    with_items:
-      port: 8001
-      root: /home/vagrant
     notify:
       - restart nginx
 
