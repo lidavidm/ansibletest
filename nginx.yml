@@ -4,4 +4,7 @@
 
   tasks:
   - name: Install Nginx
-    apt: nginx
+    apt: name=nginx state=present
+
+  - name: Start Nginx
+    service: name=nginx state=started
